@@ -22,7 +22,7 @@ const AdminNavbar = () => {
     }
   };
   return (
-    <nav className="basis-3/12 h-screen flex flex-col items-center gap-6 p-5 ">
+    <nav className="basis-3/12 h-screen flex flex-col items-center gap-6 p-5  ">
       <div>
         {profilePhoto ? (
           <img

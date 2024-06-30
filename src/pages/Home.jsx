@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import AdminNavbar from "../components/AdminNavbar";
-import { Outlet } from "react-router-dom";
+import { Navigate, Outlet, useNavigate } from "react-router-dom";
+import { useGetUserInfo } from "../hooks/useGetUserInfo";
 
 const Home = () => {
+  const { isAuth } = useGetUserInfo();
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!isAuth) {
+      navigate("/");
+    }
+  }, []);
+
   return (
     <section className="flex">
       <AdminNavbar />
